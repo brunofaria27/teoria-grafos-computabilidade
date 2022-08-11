@@ -1,3 +1,17 @@
+def main():
+    grafos = Grafo()
+    qnt_vertices = int(input())
+    grafos.add_vertice(qnt_vertices)
+    qnt_relacoes = int(input())
+    for _ in range(0, qnt_relacoes):
+        relacao = input().split(' ')
+        grafos.add_relacoes(int(relacao[0]), int(relacao[1]))
+    print(grafos.gerar_matrizI())
+    print(grafos.gerar_matrizA())
+
+if __name__ == "__main__":
+    main()
+
 NÃO DIRECIONADO ->
 IN:
 5

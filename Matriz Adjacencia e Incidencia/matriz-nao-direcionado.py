@@ -25,17 +25,4 @@ class Grafo:
             matrizAdj[self.arestas[j][0] - 1][self.arestas[j][1] - 1] = 1
             matrizAdj[self.arestas[j][1] - 1][self.arestas[j][0] - 1] = 1 # Não direcionado -> tem relação X -> Y e Y -> X
         return matrizAdj
-                    
-def main():
-    grafos = Grafo()
-    qnt_vertices = int(input())
-    grafos.add_vertice(qnt_vertices)
-    qnt_relacoes = int(input())
-    for _ in range(0, qnt_relacoes):
-        relacao = input().split(' ')
-        grafos.add_relacoes(int(relacao[0]), int(relacao[1]))
-    print(grafos.gerar_matrizI())
-    print(grafos.gerar_matrizA())
-
-if __name__ == "__main__":
-    main()
+        
