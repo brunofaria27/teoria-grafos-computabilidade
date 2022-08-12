@@ -1,17 +1,3 @@
-def main():
-    grafos = Grafo()
-    qnt_vertices = int(input())
-    grafos.add_vertice(qnt_vertices)
-    qnt_relacoes = int(input())
-    for _ in range(0, qnt_relacoes):
-        relacao = input().split(' ')
-        grafos.add_relacoes(int(relacao[0]), int(relacao[1]))
-    print(grafos.gerar_matrizI())
-    print(grafos.gerar_matrizA())
-
-if __name__ == "__main__":
-    main()
-
 NÃO DIRECIONADO ->
 IN:
 5
@@ -37,6 +23,8 @@ OUT:
  [0. 1. 1. 0. 1.]
  [0. 1. 0. 1. 0.]]
 
+--------------------------------------------------------------------------------------
+
 DIRECIONAIS ->
 IN:
 5
@@ -61,3 +49,19 @@ OUT:
  [0. 1. 0. 1. 0.]
  [0. 0. 0. 0. 1.]
  [0. 0. 0. 0. 0.]]
+
+--------------------------------------------------------------------------------------
+
+ MAIN CASO PRECISE TESTAR O ALGORITMO:
+ def main():
+    qnt_vertices = int(input())
+    grafos = Grafo(qnt_vertices)
+    qnt_relacoes = int(input())
+    for _ in range(0, qnt_relacoes):
+        relacao = input().split(' ')
+        grafos.add_relacoes(int(relacao[0]), int(relacao[1]))
+    print(grafos.gerar_matrizI())
+    print(grafos.gerar_matrizA())
+
+if __name__ == "__main__":
+    main()
