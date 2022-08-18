@@ -3,8 +3,6 @@ class Grafo:
         self.numVertices = numVertices
         self.numArestas = numArestas
         self.relacoes = self.sorting(self.create_relacao(lista_graph))
-        self.origem = [x[0] for x in self.relacoes]
-        self.destino = [x[1] for x in self.relacoes]
     
     def create_relacao(self, lista_graph: list) -> list:
         relacoes = []
@@ -83,6 +81,7 @@ def main():
     lista_graph = get_graph(dir_name)
     grafo = Grafo(lista_graph[0], lista_graph[1], lista_graph)
     vertice_pesquisa = input('Qual o vértice que irá ser pesquisado? ')
+
 
 if __name__ == "__main__":
     main()
