@@ -13,55 +13,66 @@ class Grafo:
     
     def sorting(self, relacoes: list, situacao: int=0) -> list:
         if situacao == 1:
-            relacao_ordenada = sorted(relacoes, key=lambda item: item[1])
+            relacao_ordenada = sorted(relacoes, key=lambda item: item[1]) # Destino
             return relacao_ordenada
-        relacao_ordenada = sorted(relacoes, key=lambda item: item[0])
+        relacao_ordenada = sorted(relacoes, key=lambda item: item[0]) # Origem
         return relacao_ordenada
 
     def forward_star(self) -> list:
         # Ordenar e criar array de destino e origem -> forward_star
-        new_relacao = self.sorting(self.relacoes, 1) # Ordena a relação pelo origem
+        new_relacao = self.sorting(self.relacoes, 0) # Ordena a relação pelo origem
         origem = [x[0] for x in new_relacao] # Cria o array de origem
+        destino_for = [x[1] for x in new_relacao] # Cria o array de destino ordenado com origem
         pointer = []
         for i in range(0, len(origem)):
             if i == 0:
                 pointer.append(i)
             else:
-                if origem[i] != origem[i-1]:
+                if origem[i] != origem[i - 1]:
                     pointer.append(i)
         pointer.append(pointer[len(pointer) - 1] + 1)
-        return pointer
+        return pointer, origem, destino_for
 
     def reverse_star(self) -> list:
         # Ordenar e criar array de destino e origem -> reverse_star
         new_relacao = self.sorting(self.relacoes, 1) # Ordena a relação pelo destino
         destino = [x[1] for x in new_relacao] # Cria o array de destino
+        origem_rev = [x[0] for x in new_relacao] # Cria o array de origem ordenado com destino
         pointer = []
         pointer.append(0)
-        for i in range(0, len(destino)):
-            if i == 0:
+        for i in range(1, len(destino)):
+            if destino[i] != destino[i - 1]:
                 pointer.append(i)
-            else:
-                if destino[i] != destino[i-1]:
-                    pointer.append(i)
         pointer.append(pointer[len(pointer) - 1] + 1)
-        return pointer
+        return pointer, destino, origem_rev
 
-        # TODO: Receber um vértice e mostrar o grau de saída do mesmo
-        def get_grau_saida(self, vertice: int) -> int:
-            print('Grau de saida')
-        
-        # TODO: Receber um vértice e mostrar o grau de entrada do mesmo
-        def get_grau_entrada(self, vertice: int) -> int:
-            print('Grau entrada')
+    def get_conj_sucessores(self, vertice: int, pointer: list, origem: list, destino: list) -> list:
+        sucessores = []
+        for point in range(0, len(pointer) - 1):
+            qnt_nums = pointer[point + 1] - pointer[point]
+            if origem[pointer[point]] == vertice:
+                for i in range(pointer[point], pointer[point] + qnt_nums):
+                    sucessores.append(destino[i])
+        return sucessores
 
-        # TODO: Receber um vértice e mostrar o conjunto de sucessores do mesmo
-        def get_conj_sucessores(self, vertice: int) -> list:
-            print('Conjunto sucessores')
-        
-        # TODO: Receber um vértice e mostrar o conjunto de predecessores do  mesmo
-        def get_conj_predecessores(self, vertice: int) -> list:
-            print('Conjunto predecessores')
+    def get_conj_predecessores(self, vertice: int, pointer: list, destino: list, origem_rev: list) -> list:
+        predecessores = []
+        for point in range(0, len(pointer) - 1):
+            qnt_nums = pointer[point + 1] - pointer[point]
+            if destino[pointer[point]] == vertice:
+                for i in range(pointer[point], pointer[point] + qnt_nums):
+                    predecessores.append(origem_rev[i])
+        return predecessores
+
+    def get_atributes(self, vertice: int):
+        pointer_for, origem, destino_for = self.forward_star()
+        pointer_rev, destino, origem_rev = self.reverse_star()
+        conjunto_sucessores = self.get_conj_sucessores(vertice, pointer_for, origem, destino_for)
+        conjunto_predecessores = self.get_conj_predecessores(vertice, pointer_rev, destino, origem_rev)
+        print('Conjunto de sucessores -> ' + str(conjunto_sucessores))
+        print('Grau de saída -> ' + str(len(conjunto_sucessores)))
+        print('Conjunto de predecessores -> ' + str(conjunto_predecessores))
+        print('Grau de entrada -> ' + str(len(conjunto_predecessores)))
     
 
 def get_graph(arquivo : str) -> list:
@@ -80,8 +91,8 @@ def main():
     dir_name = input('Digite o nome do arquivo (se estiver no mesmo dir) ou coloque o diretorio com o nome do arquivo: ')
     lista_graph = get_graph(dir_name)
     grafo = Grafo(lista_graph[0], lista_graph[1], lista_graph)
-    vertice_pesquisa = input('Qual o vértice que irá ser pesquisado? ')
-
+    vertice_pesquisa = int(input('Qual o vértice que irá ser pesquisado? '))
+    grafo.get_atributes(vertice_pesquisa)
 
 if __name__ == "__main__":
     main()
