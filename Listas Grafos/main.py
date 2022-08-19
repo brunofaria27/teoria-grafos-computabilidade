@@ -30,7 +30,7 @@ class Grafo:
             else:
                 if origem[i] != origem[i - 1]:
                     pointer.append(i)
-        pointer.append(pointer[len(pointer) - 1] + 1)
+        pointer.append(len(origem))
         return pointer, origem, destino_for
 
     def reverse_star(self) -> list:
@@ -43,7 +43,7 @@ class Grafo:
         for i in range(1, len(destino)):
             if destino[i] != destino[i - 1]:
                 pointer.append(i)
-        pointer.append(pointer[len(pointer) - 1] + 1)
+        pointer.append(len(destino))
         return pointer, destino, origem_rev
 
     def get_conj_sucessores(self, vertice: int, pointer: list, origem: list, destino: list) -> list:
