@@ -11,6 +11,7 @@ class Grafo:
                 relacoes.append([lista_graph[i], lista_graph[i + 1]])
         return relacoes
     
+    # COMPLEXIDADE: O(n log n) -> Comparação de 2 elementos por vez
     def sorting(self, relacoes: list, situacao: int=0) -> list:
         if situacao == 1:
             relacao_ordenada = sorted(relacoes, key=lambda item: item[1]) # Destino
