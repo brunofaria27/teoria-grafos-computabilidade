@@ -1,8 +1,10 @@
+import time
+
 class Grafo:
     def __init__(self, numVertices: int, numArestas: int, lista_graph: list):
         self.numVertices = numVertices
         self.numArestas = numArestas
-        self.relacoes = self.sorting(self.create_relacao(lista_graph))
+        self.relacoes = self.create_relacao(lista_graph)
     
     def create_relacao(self, lista_graph: list) -> list:
         relacoes = []
@@ -90,10 +92,15 @@ def get_graph(arquivo : str) -> list:
 
 def main():
     dir_name = input('Digite o nome do arquivo (se estiver no mesmo dir) ou coloque o diretorio com o nome do arquivo: ')
+    start = time.time() # Get start time
     lista_graph = get_graph(dir_name)
     grafo = Grafo(lista_graph[0], lista_graph[1], lista_graph)
+    partial = time.time() # Get partial time
+    start_partial = time.time() # Get start partial time
     vertice_pesquisa = int(input('Qual o vértice que irá ser pesquisado? '))
     grafo.get_atributes(vertice_pesquisa)
+    end = time.time() # Finally get end of the program
+    print('Tempo de execução: %.2f segundos.' % ((partial - start) + (end - start_partial)))
 
 if __name__ == "__main__":
     main()
