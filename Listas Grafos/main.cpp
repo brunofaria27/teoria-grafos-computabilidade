@@ -49,6 +49,7 @@ int main() {
       grafo.addEdge(a, b);
     }
 
+    printf("Printando GRAPH:");
     grafo.showAdj();
 
     return 0;
