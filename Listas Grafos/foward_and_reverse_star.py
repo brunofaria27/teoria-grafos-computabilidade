@@ -93,11 +93,14 @@ def get_graph(arquivo : str) -> list:
 
 def main():
     start = time.time() # Get start time
+
     dir_name = sys.argv[1] # Get dir_name for command line
     vertice_pesquisa = sys.argv[2] # Get vertice_pesquisa for command line
+
     lista_graph = get_graph(dir_name)
     grafo = Grafo(lista_graph[0], lista_graph[1], lista_graph)
     grafo.get_atributes(int(vertice_pesquisa))
+    
     end = time.time() # Finally get end of the program
     print('Tempo de execução: %.2f segundos.' % (end - start))
 
