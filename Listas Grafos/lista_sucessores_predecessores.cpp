@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <list>
+#include <string>
 #include <sstream>
 #include <stdlib.h>
 
@@ -78,11 +79,14 @@ void get_atributes(Graph grafo, int vertex) {
     cout << "\nGrau de saída: " << lista_sucessores.size();
 }
 
-int main() {
+int main(int argc, char** argv) {
     int a, b;
     ifstream file;
+    string arquivo = argv[1];
+    string vertice = argv[2];
+    int vertex = stoi(vertice);
 
-    file.open("graph-test-100.txt");
+    file.open(arquivo);
     file >> a >> b;
 
     Graph grafo(a, b);
@@ -91,7 +95,7 @@ int main() {
         grafo.addEdge(a, b);
     }
 
-    get_atributes(grafo, 20);
+    get_atributes(grafo, vertex);
 
     return 0;
 }
