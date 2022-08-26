@@ -8,6 +8,8 @@
 
 using namespace std;
 
+// TODO: Fazer ordenação da lista adj.
+
 class Graph {
     private:
         int numVertices;
