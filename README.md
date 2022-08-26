@@ -10,5 +10,6 @@ REPRESENTAÇÃO GRAFOS:
 - [Lista de Adjacência de predecessores e sucessores - Código Python](https://github.com/brunofaria27/teoria-grafos-computabilidade/blob/main/Listas%20Grafos/lista_sucessores_predecessores.py)
 - [Lista de Adjacência por meio de vetores (Origem e Destino) - Código Python](https://github.com/brunofaria27/teoria-grafos-computabilidade/blob/main/Listas%20Grafos/foward_and_reverse_star.py)
 ---------------
+
 RESUMOS TEORIA:
 - [Resumos](https://github.com/brunofaria27/teoria-grafos-computabilidade/tree/main/Resumos)
