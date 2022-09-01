@@ -1,5 +1,5 @@
 Representação de Grafos:
-
+--------------------------------------
 Você pode tentar ver os resultados na linguagem de programação C++ (Compilada), onde o código representa uma lista de adjacência.
 - [Caminho para o arquivo em C++.](https://github.com/brunofaria27/teoria-grafos-computabilidade/blob/main/Listas%20Grafos/lista_sucessores_predecessores.cpp)
 - Para compilar o programa em C++:
