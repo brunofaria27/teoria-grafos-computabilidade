@@ -22,7 +22,7 @@ Além dos métodos acima, código para a geração de grafos aleatórios com uma
 - [Criação de grafos aleatórios (euleriano, semi-euleriano, não-euleriano) - Código Python]()
 
 Analise e relatório contendo todo conhecimento abordado durante a execução do trabalho prático:
-- [Analise de performace dos algoritmos de indentificação de ponte - JupyterNoteboo]()
+- [Analise de performace dos algoritmos de indentificação de ponte - JupyterNotebook]()
 - [Relatório Final - Trabalho Prático I]()
 
 ---------------
