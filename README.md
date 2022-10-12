@@ -14,16 +14,15 @@
 <strong>TRABALHO PRÁTICO I:</strong>
 
 Consiste na utilização de dois algoritmos de indentificação de ponte e encontrar um caminho euleriano, respectivamente, sendo eles:
-- [Método Naive - Código Python]()
-- [Método de Tarjan (1974) - Código Python]()
-- [Método de Fleury - Código Python]()
+- [Método Naive - Código Python](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/naive.py)
+- [Método de Tarjan (1974) - Código Python](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/tarjan_1974.py)
+- [Método de Fleury - Código Python](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/EulerianPath/eulerian_path.py)
 
 Além dos métodos acima, código para a geração de grafos aleatórios com uma quantidade determinada de vértices foi criado, para os testes:
-- [Criação de grafos aleatórios (euleriano, semi-euleriano, não-euleriano) - Código Python]()
+- [Criação de grafos aleatórios (euleriano, semi-euleriano, não-euleriano) - Código Python](https://github.com/zTrolly/trabalho-grafos/blob/main/RandomGraphs/random_graph.py)
 
 Analise e relatório contendo todo conhecimento abordado durante a execução do trabalho prático:
-- [Analise de performace dos algoritmos de indentificação de ponte - JupyterNotebook]()
-- [Relatório Final - Trabalho Prático I]()
+- [Relatório Final - Trabalho Prático I](https://github.com/zTrolly/trabalho-grafos)
 
 ---------------
 <strong>RESUMOS TEORIA:</strong>
