@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt,Times]{article}
+\usepackage{abakos}  %pacote com padrão da Abakos baseado no padrão da PUC
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Capa da revista
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\monog}{Identificação de caminho eureliano, utilizando Fleury e identificação de pontes}
+\newcommand{\monogES}{Model - Magazine Abakós - ICEI - PUC Minas}
+\newcommand{\tipo}{Artigo}  % Especificar a seção tipo do trabalho: Artigo, Resumo, Tese, Dociê etc
+\newcommand{\origem}{Brasil}
+\newcommand{\editorial}{\textbf{Abakos}, Belo Horizonte,v. 1, n. 1, p. 00-00, Spt. 2022 - ISSN: 2316-9451}
+
+%%%%%%%%%%%%%%%%%INFORMAÇÕES SOBRE AUTOR PRINCIPAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\AutorA}{Breno Lopes Do Carmo}
+\newcommand{\funcaoA}{Programador}
+\newcommand{\emailA}{blcarmo@sga.pucminas.br}
+\newcommand{\cursA}{Graduação Ciências da Computação - PUC Minas}
+
+\newcommand{\AutorB}{Bruno Rodrigues Faria}
+\newcommand{\funcaoB}{Programador}
+\newcommand{\emailB}{bruno.faria@sga.pucminas.br}
+\newcommand{\cursB}{Graduação Ciências da Computação - PUC Minas}
+
+\newcommand{\AutorC}{Lucas De Paula Vieira Santos}
+\newcommand{\funcaoC}{Programador}
+\newcommand{\emailC}{lpvsantos@sga.pucminas.br}
+\newcommand{\cursC}{Graduação Ciências da Computação - PUC Minas}
+
+\newcommand{\univ}{Pontifícia Universidade Católica de Minas Gerais}
+
+\newcommand{\keyword}[1]{\textsf{#1}}
+
+\begin{document}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Pagina de titulo
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flushleft}
+
+\begin{minipage} [c][5cm][b]{16.5cm}
+\includegraphics[scale=1.1]{figuras/pucmg.png} 
+\end{minipage}
+
+ \vspace{0cm} {
+ \singlespacing \Large{\monog \symbolfootnote[1]{Identificação de caminho eureliano, utilizando Fleury e identificação de pontes} \\ }
+  \normalsize{\monogES}
+ }
+\end{flushleft}
+\begin{flushright}
+\singlespacing 
+\normalsize{\AutorA \footnote{\funcaoA, E-mail:\emailA \\ \cursA, \origem. }} \\
+\normalsize{\AutorB \footnote{\funcaoB, E-mail:\emailB \\ \cursB, \origem. }} \\
+\normalsize{\AutorC \footnote{\funcaoC, E-mail:\emailC \\ \cursC, \origem. }} \\
+\end{flushright}
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent
+O artigo trata da identificação de caminho eureliano utilizando a identificação de pontes usando dois algoritmos, o algoritmo Naive e o \cite{tarjan}, para que possa ser analisado a diferença entre esses algoritmos e o seu tempo de execução, para N quantidade de vértices. Diante disso, foram utilizados os algoritmos de identificação de pontes para identificar um caminho euleriano em um grafo qualquer, onde esses grafos quaisquer são criados de forma aleatória sendo eles, eulerianos, semi-euleriano e não euleriano, levando em consideração um  grafo  simples  não-direcionado G=(V, E), em que V representa o conjunto de vértices e E o conjunto de arestas.
+\\\textbf{\keyword{Palavras-chave: }}Grafos. Pontes. Busca. Euleriano. Complexidade. Naive. Tarjan. 
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INICIO DO TEXTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{textos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FIM DO TEXTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \selectlanguage{brazil}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Inicio bibliografia
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \newpage
+ \singlespace{
+ \bibliographystyle{abntex2-alf}
+ \bibliography{bibliografia}
+ }
+
+\end{document}

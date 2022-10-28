@@ -13,7 +13,7 @@
 ---------------
 <strong>TRABALHO PRÁTICO I:</strong>
 
-Consiste na utilização de dois algoritmos de indentificação de ponte e encontrar um caminho euleriano, respectivamente, sendo eles:
+Todo código presente no trabalho prático I pode ser encontrando no diretório `Identificação de pontes`. O trabalho consiste na utilização de dois algoritmos de indentificação de ponte e encontrar um caminho euleriano, respectivamente, sendo eles:
 - [Método Naive - Código Python](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/naive.py)
 - [Método de Tarjan (1974) - Código Python](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/tarjan_1974.py)
 - [Método de Fleury - Código Python](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/EulerianPath/eulerian_path.py)
